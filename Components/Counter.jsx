@@ -1,23 +1,22 @@
 import React from 'react';
 
 class Counter extends React.Component {
-  counstructor(props) {
+  constructor(props) {
     super(props);
-    //state정의
-    this.state = { count: 0 };
+    this.state = {
+      //초기 카운트 값을 프로퍼티에서 전달된 값으로 설정한다
+      count: props.count,
+    };
     this.increaseCount = this.increaseCount.bind(this);
   }
   increaseCount() {
-    //state변경
-    this.setState((count) => {
-      count: count + 1;
-    });
+    this.setState(({ count }) => ({ count: count + 1 }));
   }
   render() {
     return (
       <div>
-        <span>카운트: {this.state.count}</span>
-        <button onClick={this.increaseCount}>카운트증가</button>
+        현재 카운트: {this.state.count}
+        <button onClick={this.increaseCount}>카운트 증가</button>
       </div>
     );
   }
