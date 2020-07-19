@@ -31,7 +31,7 @@
 
 ### Day7 [20-07-19]
 - 리액트 컴포넌트 (3-5)
-> 생명주기 함수
+* 생명주기 함수
 > > + constructor(props)함수 : 맨 처음에 생성될 때 한번만 호출, 상태(state or object 변수)를 선언할 때 사용
 > > + render()함수 : 데이터가 변경되어 새 화면을 그려야 할 때 자동으로 호출되는 함수
 > > + static getDerivedStateFromProps(props, state)함수 : 상위 컴포넌트에서 전달받은 프로퍼티로 state값을 연동할 때 주로 사용, 반환값으로 state 변경
@@ -40,6 +40,6 @@
 > > + getSnapshotBeforeUpdate(prevPros, prevState)함수 : 컴포넌트의 변경된 내용이 가상화면에 완성된 이후 호출되는 함수, 화면에 실제 출력 전에 DOM정보에 접근할 때 사용
 > > + componentDidUpdate(prevProps, prevState, snapshot)함수 : 컴포넌트가 실제 화면에 출력된 이후 호출되는 함수, DOM정보를 변경할 때 사용
 > > + componentWillUnmount()함수 : 컴포넌트가 소멸되기 직전에 호출되는 함수, 컴포넌트에서 감시하고있는 작업들을 해제할 때 필요한 함수. 생략되면 메모리 누수현상이 생겨 작동을 멈추기도 함
-> 클래스형 컴포넌트
-> > shallowEqual()함수로 얕은비교
-> > Component대신 얕은 비교를 사용하는 PureComponent로 컴포넌트를 만들어 리액트 앱의 성능을 높임
+* 클래스형 컴포넌트
+> > + shallowEqual()함수로 얕은비교
+> > + Component대신 얕은 비교를 사용하는 PureComponent로 컴포넌트를 만들어 리액트 앱의 성능을 높임
