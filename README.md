@@ -75,3 +75,8 @@
 > CDN방식으로 머터리얼 디자인 적용, scss적용
 > 컴포넌트에 머터리얼 디자인 적용
 > 자세한 사용 방법은 Materialize 공식 웹(https://materializecss.com/) 참조
+
+### Day14 [20-07-26]
+- 스타일 컴포넌트 만들기 (react-with-styles적용)
+> + button Component 만들기
+> + 반응형 스타일 구성
