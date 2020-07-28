@@ -161,15 +161,18 @@ const formulaWithCompose = compose([multiplyTwo, multiplyThree, addFour]);
 
 > + 실무에서 사용하는 함수 조합 기법
 > > **1. arguments를 사용하여 배열 인자 대신 나열형 인자로 함수 구조를 유연하게 만들기**
+> > 
 ~~~
 const funcArr = Array.prototype.slice.call(arguments);
 ~~~
 > > 다음과 같이 slice()함수를 사용하여 나열형 자료를 배열로 변환
+> >
 ~~~
 const formulaWithCompose = compose(multiplyTwo, multiplyThree, addFour);
 ~~~
 > > 마지막엔 배열값을 전달하지 않고 인자 항목을 원하는 만큼 전달해 조합하여 사용
 > > **2. arguments를 사용하여 하나의 실행 인자 value를 다중 인자로 사용 가능하게 확장하기**
+> >
 ~~~
 return function(){
   const args = Array.prototype.slice.call(arguments);
@@ -180,6 +183,7 @@ return function(){
 > > **3. 전개 연산자로 더 간결하게 만들기**
 <br/> 전개 연산자(...)를 사용하면 arguments변수, Array.prototype.slice.call()함수, apply()함수가 없어져 코드가 간결해짐
 > > **4. 함수 조합 실행하기**
+>>
 ~~~
 const formulaWithCompse = compose(multiplyTwo, multiplyThree, addFour);
 formulaWithCompose(10);
