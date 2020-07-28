@@ -96,3 +96,19 @@
 
 ### Day15 [20-07-27]
 - CheckBox 컴포넌트 만들며 복습하기 (4-5)
+
+### Day16 [20-07-28]
+- 커링과 조합 개념 공부 (5-1)
+> + 커링 : 반환값이 함수인 디자인 패턴(함수), 중복된 코드를 반복적으로 입력하지 않고 원하는 기능을 조합하여 적재적소에 사용할 수 있다
+</br> > -> '함수의 재활용'을 위해 사용, **인자를 나눠 받아 실행할 수 있다**
+`
+const multiply = (a,b) => a*b;
+const add = (a,b) => a+b;
+
+const multiplyX = x => a => multiply(a,2);
+const addX = x => add(x,a);
+
+const addFour = addX(4);
+const multiplyTwo = multiplyX(2);
+const multiplyThree = multiplyX(3);
+const formula = x => addFour(multiplyThree(multiplyTwo(x)));`
