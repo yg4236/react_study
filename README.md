@@ -96,3 +96,91 @@
 
 ### Day15 [20-07-27]
 - CheckBox 컴포넌트 만들며 복습하기 (4-5)
+
+### Day16 [20-07-28]
+- 커링과 조합 개념 공부 (5-1)
+> + 커링 : 반환값이 함수인 디자인 패턴(함수), 중복된 코드를 반복적으로 입력하지 않고 원하는 기능을 조합하여 적재적소에 사용할 수 있다
+</br>  -> '함수의 재활용'을 위해 사용, **인자를 나눠 받아 실행할 수 있다**
+~~~
+커링 겹쳐서 사용 예시
+const multiply = (a,b) => a*b;
+const add = (a,b) => a+b;
+
+const multiplyX = x => a => multiply(a,2);
+const addX = x => add(x,a);
+
+const addFour = addX(4);
+const multiplyTwo = multiplyX(2);
+const multiplyThree = multiplyX(3);
+const formula = x => addFour(multiplyThree(multiplyTwo(x)));
+~~~
+> + 합수 조합 기법
+> > \* Compose()함수 만들어 보기 : 함수 적용의 흐름을 헷갈리지 않고 가독성을 올리기위해
+~~~
+함수 조합 예시
+[multiplyTwo, multiplyThree, addFour].reduce(
+  function(prevFunc, nextFunc) {
+    return function(value) {
+      return nextFunc(prevFunc(value));
+    };
+  },
+  function(k) {
+    return k;
+  },
+);
+~~~
+> > 다음과 같은 함수는 3단계를 거쳐 다음과 같이 풀이된다
+~~~ 
+function(value){
+    return addFour(
+    function(value){
+        return multiplyThree(
+            function(value){
+                return multiplyTwo(
+                    (k => k)(value)
+                );
+            }(value)
+        );
+    }(value)
+);}
+~~~
+> > ▼compose()함수로 간결하게 나타내기
+~~~
+function compose(funcArr){
+    return funcArry.reduce(
+        function (prevFunc, nextFunc){
+            return function(value){
+                return nextFunc(prevFunc(value));
+            }
+        },
+        function(k) {return k;}
+    );
+}
+const formulaWithCompose = compose([multiplyTwo, multiplyThree, addFour]);
+~~~
+
+> + 실무에서 사용하는 함수 조합 기법
+> > **1. arguments를 사용하여 배열 인자 대신 나열형 인자로 함수 구조를 유연하게 만들기**
+~~~
+const funcArr = Array.prototype.slice.call(arguments);
+~~~
+> > ▲다음과 같이 slice()함수를 사용하여 나열형 자료를 배열로 변환
+~~~
+const formulaWithCompose = compose(multiplyTwo, multiplyThree, addFour);
+~~~
+> > ▲마지막엔 배열값을 전달하지 않고 인자 항목을 원하는 만큼 전달해 조합하여 사용
+<br/> **2. arguments를 사용하여 하나의 실행 인자 value를 다중 인자로 사용 가능하게 확장하기**
+~~~
+return function(){
+  const args = Array.prototype.slice.call(arguments);
+  return nextFunc(prevFunc.apply(null, args));
+}
+~~~
+> > ▲다음과 같이 arguments 변수와 nextFunc의 인자로 apply()함수를 이용하면 인자를 여러개 받아 처리하는 함수도 조합이 가능하다
+<br/> **3. 전개 연산자로 더 간결하게 만들기**
+<br/> 전개 연산자(...)를 사용하면 arguments변수, Array.prototype.slice.call()함수, apply()함수가 없어져 코드가 간결해짐
+<br/>**4. 함수 조합 실행하기**
+~~~
+const formulaWithCompse = compose(multiplyTwo, multiplyThree, addFour);
+formulaWithCompose(10);
+~~~
