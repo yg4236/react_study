@@ -201,3 +201,30 @@ formulaWithCompose(10);
 ### Day19 [20-07-31]
 - 하이어오더 컴포넌트 라이브러리 사용하기 (5-3)
 > recompose 라이브러리 설치 및 임포트 설정
+
+### Day20 [20-08-01]
+- 하이어오더 컴포넌트 라이브러리 사용하기 (5-3)
+> + branch() 함수로 조건에 따라 다른 컴포넌트 출력하기
+~~~
+branch(
+  condition: props -> boolean,
+  left: HigherOrderComponent,
+  [right: HigherOrderComponent] //생략가능
+)(WrappedComponent)
+~~~
+> + withState() 함수로 상태관리와 이벤트 처리하기
+~~~
+withState(
+  stateName: string,
+  stateUpdater: string,
+  initialState: any,
+)(WrappedComponent)
+~~~
+> + lifecycle() 함수로 컴포넌트에 생명주기 함수 추가하기
+~~~
+lifecycle({
+  [lifeCycleMethod: string]: function,
+  state: object,
+})(WrappedComponent)
+~~~
+<br/> **recompose는 반복해서 입력해야 하는 불필요한 코드의 양을 줄여야 하는 경우에 사용. 적절한 경우에만 최소한으로 사용**
