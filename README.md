@@ -256,3 +256,24 @@ lifecycle({
 > > **-> 컨텍스트1, 컨텍스트2 버튼이 중복작동하지 않음**
 > + 여러 공급자를 구독하는 소비자 만들기 : 하이어오더 컴포넌트를 조합하여 소비자를 만듬, 하지만 compose()함수는 소비자에 중복된 loading 프로퍼티를 전달(**하이어오더 컴포넌트 조합 충돌 문제**) -> render 프로터피 도입필요
 > + 하이어오더 컴포넌트 조합 충돌 문제 해결 : 앞에서 소비자를 만들기 위해 작성한 하이어오더 컴포넌트의 render()함수를 프로퍼티로 전달받으면 해결
+
+### Day24 [20-08-05]
+- 컨텍스트 API 활용하기 (6-3)
+> 컨텍스트 API를 활용하면 일일이 공급자와 소비자를 구현하지 않아도 됨.
+> + createContext() 함수로 공급자와 소비자 만들기
+> > 
+~~~
+const MyContext = React.createContext(defaultValue);
+// MyContext.Provider, MyContext.Consumer으로 접근하여 사용
+// 또는 const {Provider, Consumer } = React.createContext(defaultValue); 와 같이 분할 할당하여 사용
+~~~
+> > ▲ createContext()는 리액트 최상위 함수임으로 React.creatContext()와 같이 사용, contextTypes, childContextTypes속성을 일일이 정의 해주지 않아도 됨.
+> + 컨텍스트 API로 공급자와 소비자 만들기
+> >
+~~~
+setLoading(key, value) {
+    const newState = { [key]: value };
+    this.setState(newState);
+}
+~~~
+> > ▲ setLoading() 함수에서 key, value를 인자로 받아 key에 해당하는 state값을 저장  
