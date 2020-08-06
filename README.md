@@ -277,3 +277,7 @@ setLoading(key, value) {
 }
 ~~~
 > > ▲ setLoading() 함수에서 key, value를 인자로 받아 key에 해당하는 state값을 저장  
+
+### Day25 [20-08-06]
+- 컨텍스트로 모달 만들기 (6-4)
+> 모달 : 배경이 어두워지면서 나타나는 알림창
