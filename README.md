@@ -287,3 +287,7 @@ setLoading(key, value) {
 > + ModalProvider와 소비자가 연결된 button 컴포넌트 생성
 > + ModalProvider 생성 함수로 다양한 모달 구성(삭제, 회원가입)
 > + 모달에 데이터 전달하기
+
+### Day27 [20-08-08]
+- 입력 폼 만들며 컨텍스트 복습하기 (6-5)
+> + 유효성검사
