@@ -6,10 +6,12 @@ import ReduxApp02 from '../07/ReduxApp02';
 import ReduxApp03 from '../07/ReduxApp03';
 import AdvReduxApp01 from '../07/AdvReduxApp01';
 import AdvReduxApp02 from '../07/AdvReduxApp02';
+import AdvReduxApp03 from '../07/AdvReduxApp03';
 
 storiesOf('ReduxApp', module)
   .addWithJSX('기본 스토어 설정', () => <ReduxApp01 />)
   .addWithJSX('기본 액션 호출', () => <ReduxApp02 />)
   .addWithJSX('기본 리듀서 구현', () => <ReduxApp03 />)
   .addWithJSX('다중 리듀서 설정', () => <AdvReduxApp01 />)
-  .addWithJSX('다중 액션 설정', () => <AdvReduxApp02 />);
+  .addWithJSX('다중 액션 설정', () => <AdvReduxApp02 />)
+  .addWithJSX('그래프 데이터베이스', () => <AdvReduxApp03 />);
