@@ -305,3 +305,8 @@ setLoading(key, value) {
 > + 액션 : {type: ~, payload: ~} 구조로 된 객체, type은 액션이 어떤 작업인지 쉽게 이해할 수 있는 고유한 값을 구분한 문자열로 넣어줌, payload는 스토어에 사용될 값(생략가능)
 > + 리듀서 : function reducer(state, action) { return state; }와 같은 구조를 가지는 함수, 스토어의 이전데이터, 액션을 받아 새로운 스토어의 데이터를 반환
 > + dispatch() 함수 : 액션은 dispatch() 함수를 통해서 리듀서로 전달된다.
+
+### Day30 [20-08-11]
+- 액션과 리듀서의 관계 알아보기 (7-2)
+- 리듀서 구현하고 실행해 보기
+
