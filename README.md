@@ -367,3 +367,8 @@ setLoading(key, value) {
 > + 공용 컴포넌트 스타일 파일 만들기
 > + 플렉스 박스로 가로배치를 위한 레이아웃 컴포넌트 만들기
 > > - 플렉스박스 레이아웃 : 플렉스박스 레이아웃을 적용하려는 부모 엘리먼트의 display속성을 flex로, flexDirection 속성을 row 또는 column으로 지정 (예시는 스토리북 확인)
+
+### Day40 [20-08-21]
+- 가상 코인 거래소의 공용 컴포넌트 만들기 (8-2)
+> + 공간을 만들어주는 컴포넌트 만들기
+> > top, left, right, bottom, vertical, horizontal 프로퍼티로 공간 너비 
