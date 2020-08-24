@@ -381,3 +381,13 @@ setLoading(key, value) {
 - 가상 코인 거래소의 공용 컴포넌트 만들기 (8-2)
 > + 데이터 테이블 컴포넌트 만들기
 > + 모달 컴포넌트 만들기
+
+### Day43 [20-08-24]
+- 가상 코인 거래소의 공용 컴포넌트 만들기 (8-2)
+> + 사용자와 상호 작용을 위한 컴포넌트 만들기
+- 프로젝트 구성하기 (8-3)
+> + 폴더와 파일 구성
+> + 앱 전체 화면 구성 ( 화면 구성 컴포넌트 (ApppLayout), 상단 메뉴 (AppNav), 본문 (children))
+> + 상단 정보 화면 구성 ( 상단 화면 (CoinOverview), 코인 화면 (CoinDashlet))
+> + 하단 정보 화면 구성 ( 하단 화면 (TransactionList), 검색 필터 (TransactionSearchFilter), 검색 결과 (Transaction Table))
+> + 본문 화면 구성 ( 본문 (MainPage), 상단 화면 (CoinOverview), 하단 화면 (TransactionList))
