@@ -391,3 +391,10 @@ setLoading(key, value) {
 > + 상단 정보 화면 구성 ( 상단 화면 (CoinOverview), 코인 화면 (CoinDashlet))
 > + 하단 정보 화면 구성 ( 하단 화면 (TransactionList), 검색 필터 (TransactionSearchFilter), 검색 결과 (Transaction Table))
 > + 본문 화면 구성 ( 본문 (MainPage), 상단 화면 (CoinOverview), 하단 화면 (TransactionList))
+
+### Day44 [20-08-25]
+- 가상 데이터 서버 설정하기 (9-1)
+> 실습전 react-server와 json-server를 한개씩 각각 구동
+- 데이터 요청을 위한 axios라이브러리 도입하기 (9-2)
+> + REST API : 데이터를 요청할 때는 약속한 방식으로 하자는 일종의 약속
+> + axios 설치하고 가상 코인 거래소에 
