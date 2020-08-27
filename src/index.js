@@ -6,7 +6,7 @@ import './doit-ui/app.css';
 import CoinApp from './08/CoinApp';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<CoinAppp />, document.getElementById('root'));
+ReactDOM.render(<CoinApp />, document.getElementById('root'));
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />

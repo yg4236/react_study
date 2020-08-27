@@ -12,32 +12,9 @@ import Select, { Option } from '../../../doit-ui/Select';
 // import Api from '../../Api';
 
 class TransactionSearchFilter extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleSubmit(params) {
-    // const { requestTransactionList, setFilter } = this.props;
-    const { setFilter, history } = this.props;
-    const cleanedParams = Object.entries(params)
-      .filter(entries => entries[1] !== '')
-      .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
-    // requestTransactionList(cleanedParams);
-    // setFilter(cleanedParams);
-    const querystring = Object.entries(params)
-      .filter(entries => !!entries[1])
-      .map(([key, value]) => `${key}=${value}`)
-      .join('&');
-    history.push(`/?${querystring}`);
-
-    // Api.get('/transactions', { params })
-    //   .then(({ data }) => setTransactionList(data));
-  }
   render() {
-    const { initValues } = this.props;
     return (
-      <Form onSubmit={this.handleSubmit} initValues={initValues}>
+      <Form onSubmit={values => console.log(values)}>
         <Form.Consumer>
           {({ onChange, values }) => (
             <InlineList spacingBetween={2} verticalAlign="bottom">
@@ -51,16 +28,16 @@ class TransactionSearchFilter extends PureComponent {
                 <Option label="두잇코인(DOIT)" value="DOIT" />
               </Select>
               <Input
-                name="currentPrice_gte"
+                name="minAmount"
                 label="최소 거래가"
                 onChange={onChange}
-                value={values['currentPrice_gte']}
+                value={values['minAmount']}
               />
               <Input
-                name="currentPrice_lte"
+                name="maxAmount"
                 label="최대 거래가"
                 onChange={onChange}
-                value={values['currentPrice_lte']}
+                value={values['maxAmount']}
               />
               <Button type="submit" primary>
                 검색
@@ -73,6 +50,6 @@ class TransactionSearchFilter extends PureComponent {
   }
 }
 
-TransactionSearchFilter.propTypes = { setFilter: PropTypes.func };
+TransactionSearchFilter.propTypes = {};
 
 export default withRouter(TransactionSearchFilter);

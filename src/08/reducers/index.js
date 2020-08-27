@@ -1,5 +1,5 @@
-import transaction from './transactionsReducer';
+import transactions from './transactionsReducer';
 
 export default {
-  transaction,
+  transactions,
 };

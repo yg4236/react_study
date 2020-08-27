@@ -1,3 +1,5 @@
+//import Api from '../Api';
+
 export const SET_TRANSACTION_LIST = 'transaction/SET_TRANSACTION_LIST';
 
 export function setTransactionList(transactions) {
