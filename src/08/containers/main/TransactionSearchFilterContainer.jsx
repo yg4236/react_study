@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
 import TransactionSearchFilter from './TransactionSearchFilter';
-import { setTransactionList } from '../../actions/transactionActions';
+import { requsetTransactionList } from '../../actions/transactionActions';
 
-export default connect(null, { setTransactionList })(TransactionSearchFilter);
+export default connect(null, { requsetTransactionList })(TransactionSearchFilter);

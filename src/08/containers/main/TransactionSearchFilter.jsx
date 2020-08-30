@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 import InlineList from '../../../doit-ui/InlineList';
@@ -18,8 +18,8 @@ class TransactionSearchFilter extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(params) {
-    const { setTransactionList } = this.props;
-    Api.get('/transaction', { params }).then(({ data }) => setTransactionList(data));
+    const { requestTransactionList } = this.props;
+    requestTransactionList(params);
   }
   render() {
     return (
@@ -59,6 +59,6 @@ class TransactionSearchFilter extends PureComponent {
   }
 }
 
-TransactionSearchFilter.propTypes = { setTransactionList: propTypes.func };
+TransactionSearchFilter.propTypes = { requestTransactionList: propTypes.func };
 
 export default withRouter(TransactionSearchFilter);
