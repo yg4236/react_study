@@ -23,6 +23,23 @@
       "amount": "234",
       "name": "비트코인",
       "id": 3
+    },
+    {
+      "currentPrice": "4,216,000원",
+      "name": "비트코인",
+      "id": 4
+    },
+    {
+      "currentPrice": "4,216,000원",
+      "amount": "11",
+      "name": "비트코인",
+      "id": 5
+    },
+    {
+      "currentPrice": "4,216,000원",
+      "amount": "22",
+      "name": "비트코인",
+      "id": 6
     }
   ]
 }
