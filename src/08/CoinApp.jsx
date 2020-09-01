@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Provider } from 'react-redux';
 import ModalProvider from './ModalProvider';
-import NotificationContainer from './containers/main/NotificationContainer';
+import NotificationContainer from './containers/NotificationContainer';
 
 import AppLayout from './components/AppLayout';
 import MainPage from './components/main/MainPage';
