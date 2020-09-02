@@ -1,5 +1,5 @@
 import Api from '../Api';
-import { showMessage } from './notificationActions';
+//import { showMessage } from './notificationActions';
 
 export const LOADING_TRANSACTION_LIST = 'transaction/LOADING_TRANSACTION_LIST';
 export const SET_TRANSACTION_LIST = 'transaction/SET_TRANSACTION_LIST';
@@ -32,7 +32,6 @@ export function requestTransactionList(params) {
       ({ data }) => dispatch(setTransactionList(data)),
       error => {
         dispatch(setError(error.response.data.errorMessage));
-        dispatch(showMessage(error.response.data.errorMessage, true));
       },
     );
   };
