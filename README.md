@@ -456,3 +456,7 @@ const middleware = store => nextRunner => action => nextRunner(action);
 ### Day53 [20-09-03]
 - 코인 거래 알림 효과 추가하며 마무리하기 (10-5)
 > + 코인 거래 처리 과정 메시지 알림창에 표시하기
+
+### Day54 [20-09-04]
+- 에어비앤비 개발 방식으로 비동기 제어하기
+- redux-pack 미들웨어로 비동기 제어하기 (11-1)
