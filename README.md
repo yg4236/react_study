@@ -460,3 +460,9 @@ const middleware = store => nextRunner => action => nextRunner(action);
 ### Day54 [20-09-04]
 - 에어비앤비 개발 방식으로 비동기 제어하기
 - redux-pack 미들웨어로 비동기 제어하기 (11-1)
+
+### Day55 [20-09-05]
+- redux-pack 미들웨어로 비동기 제어하기 (11-2)
+> + 코인 거래 요청에 redux-pack 적용하기 : meta 항목에 '이벤트 함수'들로 추가 작업 가능
+> + redux-pack 액션에 알림 메시지 적용하기
+> + 알림 모듈화 하기
