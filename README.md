@@ -467,7 +467,7 @@ const middleware = store => nextRunner => action => nextRunner(action);
 > + redux-pack 액션에 알림 메시지 적용하기
 > + 알림 모듈화 하기
 
-## Day56 [20-09-06]
+### Day56 [20-09-06]
 - 대용량 데이터 효율적으로 처리하기 (11-2)
 > + 페이지 개념 도입하기
 > + 가상 데이터 서버 페이지 기능 추가하기
