@@ -18,11 +18,12 @@ class TransactionSearchFilter extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(params) {
-    const { requestTransactionList } = this.props;
+    const { requestTransactionList, setFilter } = this.props;
     const cleanedParams = Object.entries(params)
       .filter(([key, value]) => value !== '')
       .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
     requestTransactionList(params);
+    setFilter(cleanedParams);
   }
   render() {
     return (
@@ -61,7 +62,7 @@ class TransactionSearchFilter extends PureComponent {
     );
   }
 }
-
+TransactionSearchFilter.propTypes = { setFilter: propTypes.func };
 TransactionSearchFilter.propTypes = { requestTransactionList: propTypes.func };
 
 export default withRouter(TransactionSearchFilter);
