@@ -4,15 +4,15 @@ import {
   requestTransactionList,
   FETCH_TRANSACTION_LIST,
 } from '../../actions/transactionPackActions';
+import { loadingStateSelector } from '../../selectors/transactionSelectors';
 
 const mapStateToProps = state => {
-  const { pagination, loadingState } = state.transactions;
-  const loading = loadingState[FETCH_TRANSACTION_LIST];
+  const { pagination } = state.transactions;
   const { number } = pagination;
 
   return {
     pageNumber: number || 1,
-    loading,
+    loading: loadingStateSelector(state),
   };
 };
 const mapDispatchToProps = {
