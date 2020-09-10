@@ -495,3 +495,7 @@ const middleware = store => nextRunner => action => nextRunner(action);
 > + 액션 모듈화하기
 > + 리듀서 모듈화하기
 > + 셀렉터 모듈화하기
+
+### Day60 [20-09-10]
+- 회원가입 기능 추가하며 마무리하기 (11-5)
+
