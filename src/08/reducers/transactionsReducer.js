@@ -3,23 +3,30 @@ import {
   LOADING_TRANSACTION_LIST,
   SET_ERROR,
 } from '../actions/transactionActions';
-
 import { handle } from 'redux-pack';
-import { CREATE_TRANSACTION, FETCH_TRANSACTION_LIST } from '../actions/transactionPackActions';
+import {
+  CREATE_TRANSACTION,
+  UPDATE_TRANSACTION,
+  FETCH_TRANSACTION,
+  FETCH_TRANSACTION_LIST,
+} from '../actions/transactionPackActions';
 
 const initState = {
   ids: [],
   entities: {},
   loadingState: {
     [CREATE_TRANSACTION]: false,
+    [UPDATE_TRANSACTION]: false,
+    [FETCH_TRANSACTION]: false,
     [FETCH_TRANSACTION_LIST]: false,
   },
   errorState: {
     [CREATE_TRANSACTION]: false,
+    [UPDATE_TRANSACTION]: false,
+    [FETCH_TRANSACTION]: false,
     [FETCH_TRANSACTION_LIST]: false,
   },
   pagination: {},
-  pages: {},
 };
 
 export default (state = initState, action) => {
@@ -59,6 +66,8 @@ export default (state = initState, action) => {
       };
     }
     case CREATE_TRANSACTION:
+    case UPDATE_TRANSACTION:
+    case FETCH_TRANSACTION:
     case FETCH_TRANSACTION_LIST: {
       return handle(state, action, {
         // case LOADING_TRANSACTION_LIST 와 동일
@@ -105,10 +114,6 @@ export default (state = initState, action) => {
                 number: pageNumber,
                 size: pageSize,
               },
-              pages: {
-                ...prevState.pages,
-                [pageNumber]: ids,
-              },
             };
           } else {
             const id = data['id'];
@@ -125,8 +130,6 @@ export default (state = initState, action) => {
           const { errorMessage } = payload.response.data;
           return {
             ...prevState,
-            loading: false,
-            hasError: true,
             loadingState: {
               ...prevState.loadingState,
               [type]: false,

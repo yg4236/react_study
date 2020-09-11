@@ -1,16 +1,30 @@
-import { SET_FILTER } from '../actions/searchFilterActions';
+import { SHOW_NOTIFICATION, HIDE_NOTIFICATION } from '../actions/notificationActions';
 
 const initState = {
-  params: {},
+  message: '',
+  warning: false,
+  showMessage: false,
 };
 
 export default (state = initState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case SET_FILTER: {
-      const { params } = payload;
-      return { ...state, params };
+    case SHOW_NOTIFICATION: {
+      const { message, warning } = payload;
+      return {
+        ...state,
+        showMessage: true,
+        message,
+        warning,
+      };
+    }
+    case HIDE_NOTIFICATION: {
+      return {
+        ...state,
+        message: '',
+        showMessage: false,
+      };
     }
     default:
       return state;

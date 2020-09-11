@@ -1,17 +1,15 @@
 import { connect } from 'react-redux';
 import TransactionList from '../../components/main/TransactionList';
+import { requestTransactionList } from '../../actions/transactionPackActions';
 import {
-  requestTransactionList,
-  FETCH_TRANSACTION_LIST,
-} from '../../actions/transactionPackActions';
-import {
+  transactionListSelector,
   transactionListLoadingStateSelector,
-  loadingStateSelector,
 } from '../../selectors/transactionSelectors';
+const mapStateToProps = state => ({
+  transactions: transactionListSelector(state),
+  loading: transactionListLoadingStateSelector(state),
+});
 
-const mapStateToProps = state => {
-  return { transactions: transactionListSelector(state), loading: loadingStateSelector(state) };
-};
 const mapDispatchToProps = {
   requestTransactionList,
 };
