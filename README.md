@@ -499,3 +499,7 @@ const middleware = store => nextRunner => action => nextRunner(action);
 ### Day60 [20-09-10]
 - 회원가입 기능 추가하며 마무리하기 (11-5)
 
+### Day61 [20-09-11]
+- 에러수정 (searchfilter부분 문제)
+
+
