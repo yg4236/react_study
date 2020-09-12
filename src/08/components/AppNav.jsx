@@ -15,7 +15,7 @@ class AppNav extends PureComponent {
       <div {...css(styles.wrapper)}>
         <div {...css(styles.container)}>
           <Heading level={3} inverse>
-            두잇 코인 거래소
+            윤규 코인 거래소
           </Heading>
           <Modal>
             {({ openModal }) => (
