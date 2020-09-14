@@ -10,6 +10,7 @@ import AppLayout from './components/AppLayout';
 import configureStore from './store/configureStore';
 import CoinOverview from './components/main/CoinOverview';
 import TransactionListContainer from './containers/main/TransactionListContainer';
+import RouterStateContainer from './containers/RouterStateContainer';
 
 class CoinApp extends PureComponent {
   store = configureStore();
@@ -18,6 +19,7 @@ class CoinApp extends PureComponent {
     return (
       <Provider store={this.store}>
         <Router>
+          <RouterStateContainer />
           <ModalProvider>
             <AppLayout>
               <Switch>
