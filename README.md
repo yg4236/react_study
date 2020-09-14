@@ -515,3 +515,9 @@ const middleware = store => nextRunner => action => nextRunner(action);
 > + Route 컴포넌트 사용하기
 > + Switch 컴포넌트 사용해 보기
 > + Link 컴포넌트 사용해 보기
+
+### Day64 [20-09-14]
+- 주소와 리덕스 연결하기 (12-3)
+> + 가상 코인 거래소의 검색 결과 화면 공유하기
+> + 검색 필터 미들웨어 추가하기
+> + 주소 변경 액션과 검색 목록 요청 연동하기
