@@ -526,3 +526,6 @@ const middleware = store => nextRunner => action => nextRunner(action);
 - 주소와 리덕스 연결하기 (12-3)
 > + 검색 변경 요청과 주소 연동하기
 > + 주소에 맞게 검색 입력값 바꿔주기
+
+### Day66 [20-09-16]
+- 페이지 데이터 에러수정
