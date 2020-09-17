@@ -529,3 +529,6 @@ const middleware = store => nextRunner => action => nextRunner(action);
 
 ### Day66 [20-09-16]
 - 페이지 데이터 에러수정
+
+### Day67 [20-09-17]
+- 파이어베이스에 가상 코인 거래소 배포하기
