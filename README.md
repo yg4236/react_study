@@ -532,3 +532,6 @@ const middleware = store => nextRunner => action => nextRunner(action);
 
 ### Day67 [20-09-17]
 - 파이어베이스에 가상 코인 거래소 배포하기
+
+### Day68 [20-09-18]
+- 파이어베이스 DB 연결하기
