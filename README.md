@@ -1,4 +1,4 @@
-# REACT STUDY recode [20-07-13 start]
+# REACT STUDY recode [20-07-13 ~ 20-09-18]
 
 ### Day1 [20-07-13]
 - 리액트 개발환경 설치 및 앱수정
